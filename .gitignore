@@ -12,6 +12,7 @@ client-react/node_modules
 
 # production
 /build
+client-react/build
 
 # misc
 .DS_Store
