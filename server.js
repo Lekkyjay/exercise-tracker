@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use("/", express.static(__dirname + "/client-react/build"));
+app.get("/", (req, res) => res.sendFile(__dirname + "/client-react/build/index.html"));
+
 const url = process.env.ATLAS_URL;
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
